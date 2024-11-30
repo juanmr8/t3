@@ -22,7 +22,7 @@ async function Images() {
   console.log(images);
   return (
     <div className="flex flex-wrap gap-4">
-      {[...images, ...images, ...images].map((image) => (
+      {images.map((image) => (
         <div key={image.id * Math.random()} className="w-48">
           <img src={image.url} />
         </div>
