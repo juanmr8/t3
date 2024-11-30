@@ -34,9 +34,11 @@ async function Images() {
 export default async function HomePage() {
   return (
     <main className="">
+      {/* Content that can be seen when logged out */}
       <SignedOut>
         <div className="h-full w-full text-2xl">Please sign in above</div>
       </SignedOut>
+      {/* Content when you sign in */}
       <SignedIn>
         <Images />
       </SignedIn>
