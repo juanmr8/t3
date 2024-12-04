@@ -11,6 +11,7 @@ import { esES } from "@clerk/localizations";
 
 import { ClerkProvider } from "@clerk/nextjs";
 import { TopNav } from "./_components/TopNav";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Gallery test",
@@ -20,7 +21,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  modal,
+}: Readonly<{ children: React.ReactNode; modal: React.ReactNode }>) {
   return (
     <ClerkProvider localization={esES}>
       <NextSSRPlugin
@@ -36,6 +38,7 @@ export default function RootLayout({
         <body className="flex flex-col gap-4">
           <TopNav />
           {children}
+          {modal}
         </body>
       </html>
     </ClerkProvider>
