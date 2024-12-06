@@ -12,6 +12,7 @@ import { esES } from "@clerk/localizations";
 import { ClerkProvider } from "@clerk/nextjs";
 import { TopNav } from "./_components/TopNav";
 import React from "react";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Gallery test",
@@ -42,6 +43,7 @@ export default function RootLayout({
           </div>
           {modal}
           <div id="modal-root" />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
