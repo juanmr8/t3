@@ -13,6 +13,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { TopNav } from "./_components/TopNav";
 import React from "react";
 import { Toaster } from "sonner";
+import { CSPostHogProvider } from "@/app/_analytics/providers";
 
 export const metadata: Metadata = {
   title: "Gallery test",
@@ -37,13 +38,15 @@ export default function RootLayout({
       />
       <html lang="en" className={`${GeistSans.variable}`}>
         <body className="">
-          <div className="grid h-screen grid-rows-[auto,1fr]">
-            <TopNav />
-            <main className="overflow-y-scroll">{children}</main>
-          </div>
-          {modal}
-          <div id="modal-root" />
-          <Toaster />
+          <CSPostHogProvider>
+            <div className="grid h-screen grid-rows-[auto,1fr]">
+              <TopNav />
+              <main className="overflow-y-scroll">{children}</main>
+            </div>
+            {modal}
+            <div id="modal-root" />
+            <Toaster />
+          </CSPostHogProvider>
         </body>
       </html>
     </ClerkProvider>
