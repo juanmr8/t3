@@ -16,6 +16,7 @@ const config = {
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/only-throw-error": "off",
     "@typescript-eslint/no-unsafe-call": "off",
+
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-type-imports": [
       "warn",
